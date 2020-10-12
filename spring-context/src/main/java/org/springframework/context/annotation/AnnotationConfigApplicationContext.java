@@ -88,6 +88,9 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+		//初始化构造函数
+		//1 初始化父类 --> 创建BeanFactory(DefaultListableBeanFactory)
+		//2 初始化自己 --> 创建带有注解的BeanDefinition的Reader和创建BeanDefinition的Scanner
 		this();
 		register(componentClasses);
 		refresh();
