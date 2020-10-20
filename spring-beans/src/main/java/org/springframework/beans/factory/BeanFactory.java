@@ -22,11 +22,15 @@ import org.springframework.lang.Nullable;
 
 /**
  * The root interface for accessing a Spring bean container.
+ * 访问 Spring bean container 的根接口。
  *
  * <p>This is the basic client view of a bean container;
+ * 	BeanFactory 是 Bean container 的基本客户端视图;
  * further interfaces such as {@link ListableBeanFactory} and
  * {@link org.springframework.beans.factory.config.ConfigurableBeanFactory}
  * are available for specific purposes.
+ *
+ * 更多的接口 例如 ListableBeanFactory,ConfigurableBeanFactory 可用于特定目的（用途）。
  *
  * <p>This interface is implemented by objects that hold a number of bean definitions,
  * each uniquely identified by a String name. Depending on the bean definition,
@@ -37,6 +41,13 @@ import org.springframework.lang.Nullable;
  * depends on the bean factory configuration: the API is the same. Since Spring
  * 2.0, further scopes are available depending on the concrete application
  * context (e.g. "request" and "session" scopes in a web environment).
+ *
+ * 持有一些bean definition 的对象实现了 BeanFactory 接口, 每个bean definition 都有唯一的字符串类型的名称。
+ * BeanFactory 依赖 bean definition 返回包含了bean definition 的独立实例对象或者单个共享实例（在BeanFactory 作用域内，该实例是singleton的即单例的）。
+ * 返回哪些类型的实例取决于bean factory的配置：API是相同的。
+ * 从Spring 2.0开始，根据特定的 application context 还可以提供了一些作用域。
+ *
+ *
  *
  * <p>The point of this approach is that the BeanFactory is a central registry
  * of application components, and centralizes configuration of application
