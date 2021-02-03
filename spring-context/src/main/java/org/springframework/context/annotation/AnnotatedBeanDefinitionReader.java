@@ -59,6 +59,8 @@ public class AnnotatedBeanDefinitionReader {
 
 	/**
 	 * Create a new {@code AnnotatedBeanDefinitionReader} for the given registry.
+	 * 为注册表提供一个 注解 BeanDefinition 阅读器
+	 *
 	 * <p>If the registry is {@link EnvironmentCapable}, e.g. is an {@code ApplicationContext},
 	 * the {@link Environment} will be inherited, otherwise a new
 	 * {@link StandardEnvironment} will be created and used.
@@ -66,6 +68,8 @@ public class AnnotatedBeanDefinitionReader {
 	 * in the form of a {@code BeanDefinitionRegistry}
 	 * @see #AnnotatedBeanDefinitionReader(BeanDefinitionRegistry, Environment)
 	 * @see #setEnvironment(Environment)
+	 *
+	 * BeanFactory是以BeanDefinitionRegistry 的形式把bean definitions注册到注册表
 	 */
 	public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry) {
 		this(registry, getOrCreateEnvironment(registry));
